@@ -1,0 +1,2844 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>__init__.py - BaiduSpider</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  <link rel="stylesheet" href="../../../overrides/stylesheets/main.css">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#baiduspider.parser.__init__" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+  <a href="https://github.com/BaiduSpider/BaiduSpider/tree/dev">
+    <span class="" style="font-size: 110%">
+        💥
+    </span>
+    BaiduSpider v1.0正式版发布，使用类型注释，让开发者获得更好的开发体验！
+  </a>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="BaiduSpider" class="md-header__button md-logo" aria-label="BaiduSpider" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BaiduSpider
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              __init__.py
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/BaiduSpider/BaiduSpider/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BaiduSpider/BaiduSpider
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../index.html" class="md-tabs__link">
+      快速上手
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../guide/index.html" class="md-tabs__link">
+        指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../FAQ/index.html" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link md-tabs__link--active">
+        API
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="BaiduSpider" class="md-nav__button md-logo" aria-label="BaiduSpider" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    BaiduSpider
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/BaiduSpider/BaiduSpider/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BaiduSpider/BaiduSpider
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        快速上手
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/index.html" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        PC端
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PC端" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          PC端
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/web.html" class="md-nav__link">
+        网页搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/news.html" class="md-nav__link">
+        资讯搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/wenku.html" class="md-nav__link">
+        文库搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/zhidao.html" class="md-nav__link">
+        知道搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/video.html" class="md-nav__link">
+        视频搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/jingyan.html" class="md-nav__link">
+        经验搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/pic.html" class="md-nav__link">
+        图片搜索
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/pc/baike.html" class="md-nav__link">
+        百科搜索
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        移动端
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="移动端" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          移动端
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/mobile/web.html" class="md-nav__link">
+        网页搜索
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FAQ/index.html" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2">
+        baiduspider
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="baiduspider" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          baiduspider
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../__init__.html" class="md-nav__link">
+        __init__.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_spider.html" class="md-nav__link">
+        _spider.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util.html" class="md-nav__link">
+        util.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_4">
+        errors
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="errors" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          errors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/__init__.html" class="md-nav__link">
+        __init__.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_5" type="checkbox" id="__nav_4_2_5" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_5">
+        parser
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="parser" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          parser
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          __init__.py
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="__init__.html" class="md-nav__link md-nav__link--active">
+        __init__.py
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__" class="md-nav__link">
+    __init__
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser" class="md-nav__link">
+    Parser
+  </a>
+  
+    <nav class="md-nav" aria-label="Parser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_baike" class="md-nav__link">
+    parse_baike()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_jingyan" class="md-nav__link">
+    parse_jingyan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_news" class="md-nav__link">
+    parse_news()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_pic" class="md-nav__link">
+    parse_pic()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_video" class="md-nav__link">
+    parse_video()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_web" class="md-nav__link">
+    parse_web()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_wenku" class="md-nav__link">
+    parse_wenku()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_zhidao" class="md-nav__link">
+    parse_zhidao()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="subparser.html" class="md-nav__link">
+        subparser.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_6" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_6" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_6">
+        models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="models" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_6_1" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_6_1">
+        typings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="typings" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          typings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_baike.html" class="md-nav__link">
+        typings_baike.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_jingyan.html" class="md-nav__link">
+        typings_jingyan.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_news.html" class="md-nav__link">
+        typings_news.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_pic.html" class="md-nav__link">
+        typings_pic.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_video.html" class="md-nav__link">
+        typings_video.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_web.html" class="md-nav__link">
+        typings_web.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_wenku.html" class="md-nav__link">
+        typings_wenku.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/typings/typings_zhidao.html" class="md-nav__link">
+        typings_zhidao.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/__init__.html" class="md-nav__link">
+        __init__.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/baike.html" class="md-nav__link">
+        baike.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/jingyan.html" class="md-nav__link">
+        jingyan.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/news.html" class="md-nav__link">
+        news.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/pic.html" class="md-nav__link">
+        pic.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/video.html" class="md-nav__link">
+        video.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/web.html" class="md-nav__link">
+        web.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/wenku.html" class="md-nav__link">
+        wenku.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/zhidao.html" class="md-nav__link">
+        zhidao.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_7" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_7" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_7">
+        mobile
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="mobile" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          mobile
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile/__init__.html" class="md-nav__link">
+        __init__.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_7_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_7_2">
+        parser
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="parser" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          parser
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile/parser/__init__.html" class="md-nav__link">
+        __init__.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile/parser/subparser.html" class="md-nav__link">
+        subparser.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_7_3" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_7_3">
+        models
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="models" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_2_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile/models/web.html" class="md-nav__link">
+        web.py
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2_7_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_4_2_7_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_4_2_7_3_2">
+        typings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="typings" data-md-level="5">
+        <label class="md-nav__title" for="__nav_4_2_7_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          typings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile/models/typings/typings_web.html" class="md-nav__link">
+        typings_web.py
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__" class="md-nav__link">
+    __init__
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser" class="md-nav__link">
+    Parser
+  </a>
+  
+    <nav class="md-nav" aria-label="Parser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_baike" class="md-nav__link">
+    parse_baike()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_jingyan" class="md-nav__link">
+    parse_jingyan()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_news" class="md-nav__link">
+    parse_news()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_pic" class="md-nav__link">
+    parse_pic()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_video" class="md-nav__link">
+    parse_video()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_web" class="md-nav__link">
+    parse_web()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_wenku" class="md-nav__link">
+    parse_wenku()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baiduspider.parser.__init__.Parser.parse_zhidao" class="md-nav__link">
+    parse_zhidao()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/BaiduSpider/BaiduSpider/edit/master/docs/api/baiduspider/parser/__init__.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>__init__.py</h1>
+                
+                <div class="doc doc-object doc-module">
+
+
+
+<h2 id="baiduspider.parser.__init__" class="doc doc-heading">
+        <code>baiduspider.parser.__init__</code>
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+<a href="#baiduspider.parser.__init__" class="headerlink" title="Permanent link">⚓︎</a></h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="baiduspider.parser.__init__.Parser" class="doc doc-heading">
+        <code>Parser</code>
+
+
+
+<a href="#baiduspider.parser.__init__.Parser" class="headerlink" title="Permanent link">⚓︎</a></h3>
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+<a href="#baiduspider.parser.__init__.Parser.__init__" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>百度搜索解析器</p>
+
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;百度搜索解析器&quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span> <span class="o">=</span> <span class="n">WebSubParser</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_baike" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_baike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_baike" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度百科搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度百科搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_baike</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度百科搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度百科搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_minify</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="c1"># 创建BeautifulSoup对象</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;body-wrapper&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;searchResult&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 获取百科总数</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-count&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;百度百科为您找到相关词条约&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;个&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 获取所有结果</span>
+    <span class="n">container</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">container</span><span class="p">:</span>
+        <span class="c1"># 链接</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://baike.baidu.com&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-title&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 简介</span>
+        <span class="n">des</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-summary&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 更新日期</span>
+        <span class="n">upd_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-date&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 生成结果</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span> <span class="s2">&quot;upd_date&quot;</span><span class="p">:</span> <span class="n">upd_date</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_jingyan" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_jingyan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_jingyan" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度经验搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度经验搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_jingyan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度经验搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度经验搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 最小化代码</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_minify</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-num&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;约&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;个&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 加载搜索结果</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;search-list&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;dl&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 链接</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://jingyan.baidu.com/&quot;</span> <span class="o">+</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+        <span class="c1"># 简介</span>
+        <span class="n">des</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;abstract&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">text</span>
+        <span class="p">)</span>
+        <span class="c1"># 获取发布日期和分类，位于`&lt;span class=&quot;cate&quot;/&gt;`中</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;cate&quot;</span><span class="p">)</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+        <span class="c1"># 发布日期</span>
+        <span class="n">pub_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+        <span class="c1"># 分类</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;分类：&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">)</span>
+        <span class="c1"># 发布者</span>
+        <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">),</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://jingyan.baidu.com&quot;</span> <span class="o">+</span> <span class="n">_</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">],</span>
+        <span class="p">}</span>
+        <span class="c1"># 支持票数</span>
+        <span class="n">votes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;succ-times&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;得票&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="c1"># 是否为原创经验</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;i-original&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">original</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">original</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># 是否为优秀经验</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;i-good-exp&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">outstanding</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">outstanding</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># 生成结果</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+            <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span>
+            <span class="s2">&quot;pub_date&quot;</span><span class="p">:</span> <span class="n">pub_date</span><span class="p">,</span>
+            <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span>
+            <span class="s2">&quot;votes&quot;</span><span class="p">:</span> <span class="n">votes</span><span class="p">,</span>
+            <span class="s2">&quot;publisher&quot;</span><span class="p">:</span> <span class="n">publisher</span><span class="p">,</span>
+            <span class="s2">&quot;is_original&quot;</span><span class="p">:</span> <span class="n">original</span><span class="p">,</span>
+            <span class="s2">&quot;is_outstanding&quot;</span><span class="p">:</span> <span class="n">outstanding</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 加入结果到集合中</span>
+    <span class="c1"># 获取分页</span>
+    <span class="c1"># pages_ = bs.find(&quot;div&quot;, class_=&quot;pager-wrap&quot;).findAll(&quot;a&quot;, class_=&quot;pg-btn&quot;)</span>
+    <span class="c1"># if not pages_:</span>
+    <span class="c1">#     return {&quot;results&quot;: results, &quot;pages&quot;: 1}</span>
+    <span class="c1"># if &quot;下一页&quot; in pages_[-1].text:</span>
+    <span class="c1">#     pages_ = pages_[:-1]</span>
+    <span class="c1"># pages = int(self._format(pages_[-1].text))</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_news" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_news</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_news" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度资讯搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度资讯搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_news</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度资讯搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度资讯搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">content</span><span class="p">),</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1"># 搜索结果总数</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;wrapper_wrapper&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;nums&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;资讯&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;篇&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 搜索结果容器</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;content_left&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-op&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 链接</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+        <span class="c1"># 简介</span>
+        <span class="n">des</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-span-last&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-color-text&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">text</span>
+        <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-span-last&quot;</span><span class="p">)</span>
+        <span class="c1"># 作者</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-gap-right&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="c1"># 发布日期</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">_</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-color-gray2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># 封面图片</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cover</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-img-radius-large&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">)[</span><span class="s2">&quot;src&quot;</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">cover</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># 生成结果</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+            <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+            <span class="s2">&quot;cover&quot;</span><span class="p">:</span> <span class="n">cover</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 加入结果</span>
+    <span class="c1"># 获取所有页数</span>
+    <span class="c1"># pages_ = bs.find(&quot;div&quot;, id=&quot;page&quot;).findAll(&quot;a&quot;)</span>
+    <span class="c1"># # 过滤页码</span>
+    <span class="c1"># if &quot;&lt; 上一页&quot; in pages_[0].text:</span>
+    <span class="c1">#     pages_ = pages_[1:]</span>
+    <span class="c1"># if &quot;下一页 &gt;&quot; in pages_[-1].text:</span>
+    <span class="c1">#     pages_ = pages_[:-1]</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_pic" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_pic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_pic" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度图片搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度图片搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@handle_err</span>
+<span class="k">def</span> <span class="nf">parse_pic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度图片搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度图片搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 从JavaScript中加载数据</span>
+    <span class="c1"># 因为JavaScript很像JSON（JavaScript Object Notation），所以直接用json加载就行了</span>
+    <span class="c1"># 还有要预处理一下，把函数和无用的括号过滤掉</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;flip.setData(&#39;imgData&#39;, &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;flip.setData(&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;]);&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;);&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;</span><span class="se">\\</span><span class="s2">/strong&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/strong&gt;&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">),</span>
+            <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">err</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">ParseError</span><span class="p">(</span><span class="s2">&quot;Invalid HTML content.&quot;</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ParseError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;resultInfo&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;约&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;张&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">_</span><span class="p">:</span>
+            <span class="c1"># 标题</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">_</span><span class="p">[</span><span class="s2">&quot;fromPageTitle&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+            <span class="c1"># 去除标题里的HTML</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">unescape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_remove_html</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+            <span class="c1"># 链接</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="s2">&quot;objURL&quot;</span><span class="p">]</span>
+            <span class="c1"># 来源域名</span>
+            <span class="n">host</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="s2">&quot;fromURLHost&quot;</span><span class="p">]</span>
+            <span class="c1"># 生成结果</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span> <span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="n">host</span><span class="p">}</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 加入结果</span>
+    <span class="c1"># 获取分页</span>
+    <span class="c1"># bs = BeautifulSoup(content, &quot;html.parser&quot;)</span>
+    <span class="c1"># pages_ = bs.find(&quot;div&quot;, id=&quot;page&quot;).findAll(&quot;span&quot;, class_=&quot;pc&quot;)</span>
+    <span class="c1"># pages = []</span>
+    <span class="c1"># for _ in pages_:</span>
+    <span class="c1">#     pages.append(int(_.text))</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span>
+        <span class="c1"># 取最大页码</span>
+        <span class="c1"># &quot;pages&quot;: max(pages),</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_video" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_video</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_video" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度视频搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度视频搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_video</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度视频搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度视频搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1"># 锁定结果div</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;video_short&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">__</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;video_small_intro&quot;</span><span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="c1"># 链接</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+        <span class="c1"># 封面图片链接</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;img&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;border-radius&quot;</span><span class="p">)[</span><span class="s2">&quot;src&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># 时长</span>
+        <span class="n">length_</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;video_play_timer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">length_</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">length_</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">second</span><span class="o">=</span><span class="n">_</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">length_</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">_</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="c1"># 简介</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">des</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-color-text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">des</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># 来源</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">__</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;wetSource&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span>
+                <span class="s2">&quot;来源：&quot;</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># 发布时间</span>
+        <span class="n">pub_time</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-font-normal&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span>
+            <span class="s2">&quot;发布时间：&quot;</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pub_time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_time</span><span class="p">(</span><span class="n">pub_time</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">pub_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">__</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">__</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="c1"># 生成结果</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+            <span class="s2">&quot;img&quot;</span><span class="p">:</span> <span class="n">img</span><span class="p">,</span>
+            <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="n">length_</span><span class="p">,</span>
+            <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span>
+            <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="n">origin</span><span class="p">,</span>
+            <span class="s2">&quot;pub_time&quot;</span><span class="p">:</span> <span class="n">pub_time</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 加入结果</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_web" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_web</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">exclude</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_web" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度网页搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度网页搜索HTML源码.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>exclude</code></td>
+        <td><code>list</code></td>
+        <td><p>要屏蔽的控件.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_web</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">exclude</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度网页搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度网页搜索HTML源码.</span>
+<span class="sd">        exclude (list): 要屏蔽的控件.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;content_left&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="c1"># 获取搜索结果总数</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;nums_text&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;百度为您找到相关结果约&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;个&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 定义预结果（运算以及相关搜索）</span>
+    <span class="n">pre_results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># 预处理新闻</span>
+    <span class="k">if</span> <span class="s2">&quot;news&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">news</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-op&quot;</span><span class="p">,</span> <span class="n">srcid</span><span class="o">=</span><span class="s2">&quot;19&quot;</span><span class="p">)</span>
+        <span class="n">news_detail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_news_block</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
+    <span class="c1"># 预处理短视频</span>
+    <span class="k">if</span> <span class="s2">&quot;video&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">video</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;op-short-video-pc&quot;</span><span class="p">)</span>
+        <span class="n">video_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_video_block</span><span class="p">(</span><span class="n">video</span><span class="p">)</span>
+    <span class="c1"># 预处理运算</span>
+    <span class="k">if</span> <span class="s2">&quot;calc&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">calc</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;op_new_cal_screen&quot;</span><span class="p">)</span>
+    <span class="c1"># 预处理相关搜索</span>
+    <span class="k">if</span> <span class="s2">&quot;related&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_related</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;rs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;table&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;th&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">_related</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">related</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># 一个一个append相关搜索</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">_related</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">_</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+                <span class="n">related</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 预处理百科</span>
+    <span class="k">if</span> <span class="s2">&quot;baike&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">baike</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-container&quot;</span><span class="p">,</span> <span class="n">tpl</span><span class="o">=</span><span class="s2">&quot;bk_polysemy&quot;</span><span class="p">)</span>
+        <span class="n">baike</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_baike_block</span><span class="p">(</span><span class="n">baike</span><span class="p">)</span>
+    <span class="c1"># 预处理贴吧</span>
+    <span class="k">if</span> <span class="s2">&quot;tieba&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">tieba</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">srcid</span><span class="o">=</span><span class="s2">&quot;10&quot;</span><span class="p">)</span>
+        <span class="n">tieba</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_tieba_block</span><span class="p">(</span><span class="n">tieba</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;music&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">music</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
+            <span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-op&quot;</span><span class="p">,</span> <span class="n">tpl</span><span class="o">=</span><span class="s2">&quot;yl_music_song&quot;</span>
+        <span class="p">)</span>
+        <span class="n">music</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_music_block</span><span class="p">(</span><span class="n">music</span><span class="p">)</span>
+    <span class="c1"># 预处理博客</span>
+    <span class="n">article_tags</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;blog&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">blog</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">tmp</span> <span class="ow">in</span> <span class="n">article_tags</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;open-source-software-blog&quot;</span><span class="p">):</span>
+                <span class="n">blog</span> <span class="o">=</span> <span class="n">tmp</span>
+                <span class="k">break</span>
+        <span class="n">blog</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_blog_block</span><span class="p">(</span><span class="n">blog</span><span class="p">)</span>
+    <span class="c1"># 预处理码云</span>
+    <span class="k">if</span> <span class="s2">&quot;gitee&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
+        <span class="n">gitee</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">tmp</span> <span class="ow">in</span> <span class="n">article_tags</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;osc-gitee&quot;</span><span class="p">):</span>
+                <span class="n">gitee</span> <span class="o">=</span> <span class="n">tmp</span>
+                <span class="k">break</span>
+        <span class="n">gitee</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">webSubParser</span><span class="o">.</span><span class="n">parse_gitee_block</span><span class="p">(</span><span class="n">gitee</span><span class="p">)</span>
+    <span class="c1"># 加载贴吧</span>
+    <span class="k">if</span> <span class="s2">&quot;tieba&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">tieba</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;tieba&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">tieba</span><span class="p">))</span>
+    <span class="c1"># 加载博客</span>
+    <span class="k">if</span> <span class="s2">&quot;blog&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">blog</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;blog&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">blog</span><span class="p">))</span>
+    <span class="c1"># 加载码云</span>
+    <span class="k">if</span> <span class="s2">&quot;gitee&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">gitee</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;gitee&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">gitee</span><span class="p">))</span>
+    <span class="c1"># 加载搜索结果总数</span>
+    <span class="c1"># 已经移动到根字典中</span>
+    <span class="c1"># if num != 0:</span>
+    <span class="c1">#     pre_results.append(dict(type=&quot;total&quot;, result=num))</span>
+    <span class="c1"># 加载运算</span>
+    <span class="k">if</span> <span class="s2">&quot;calc&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">calc</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="p">(</span>
+                <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;calc&quot;</span><span class="p">,</span>
+                <span class="n">process</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span>
+                    <span class="n">calc</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;op_new_val_screen_process&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">text</span>
+                <span class="p">),</span>
+                <span class="n">result</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span>
+                    <span class="n">calc</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;op_new_val_screen_result&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">text</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="c1"># 加载相关搜索</span>
+    <span class="k">if</span> <span class="s2">&quot;related&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">related</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;related&quot;</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="n">related</span><span class="p">))</span>
+    <span class="c1"># 加载资讯</span>
+    <span class="k">if</span> <span class="s2">&quot;news&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">news_detail</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;news&quot;</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="n">news_detail</span><span class="p">))</span>
+    <span class="c1"># 加载短视频</span>
+    <span class="k">if</span> <span class="s2">&quot;video&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">video_results</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="n">video_results</span><span class="p">))</span>
+    <span class="c1"># 加载百科</span>
+    <span class="k">if</span> <span class="s2">&quot;baike&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">baike</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;baike&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">baike</span><span class="p">))</span>
+    <span class="c1"># 加载音乐</span>
+    <span class="k">if</span> <span class="s2">&quot;music&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span> <span class="ow">and</span> <span class="n">music</span><span class="p">:</span>
+        <span class="n">pre_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;music&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">music</span><span class="p">))</span>
+    <span class="c1"># 预处理源码</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result&quot;</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">des</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;tpl&quot;</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_minify</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)),</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="c1"># 链接</span>
+        <span class="n">href</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+        <span class="c1"># 时间</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span>
+                <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-abstract&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;newTimeFactor_before_abs&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">text</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># 简介</span>
+            <span class="n">des</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-abstract&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+            <span class="n">des</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">des</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">))</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">des</span> <span class="o">=</span> <span class="n">des</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;mn&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">UnboundLocalError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+                <span class="n">des</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">time</span><span class="p">:</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="c1"># 因为百度的链接是加密的了，所以需要一个一个去访问</span>
+        <span class="c1"># 由于性能原因，分析链接部分暂略</span>
+        <span class="c1"># if href is not None:</span>
+        <span class="c1">#     try:</span>
+        <span class="c1">#         # 由于性能原因，这里设置1秒超时</span>
+        <span class="c1">#         r = requests.get(href, timeout=1)</span>
+        <span class="c1">#         href = r.url</span>
+        <span class="c1">#     except:</span>
+        <span class="c1">#         # 获取网页失败，默认换回原加密链接</span>
+        <span class="c1">#         href = href</span>
+        <span class="c1">#     # 分析链接</span>
+        <span class="c1">#     if href:</span>
+        <span class="c1">#         parse = urlparse(href)</span>
+        <span class="c1">#         domain = parse.netloc</span>
+        <span class="c1">#         prepath = parse.path.split(&#39;/&#39;)</span>
+        <span class="c1">#         path = []</span>
+        <span class="c1">#         for loc in prepath:</span>
+        <span class="c1">#             if loc != &#39;&#39;:</span>
+        <span class="c1">#                 path.append(loc)</span>
+        <span class="c1">#     else:</span>
+        <span class="c1">#         domain = None</span>
+        <span class="c1">#         path = None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;tpl&quot;</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">is_not_special</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;tpl&quot;</span><span class="p">]</span>
+            <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span>
+                <span class="s2">&quot;short_video_pc&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;sp_realtime_bigpic5&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bk_polysemy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;tieba_general&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;yl_music_song&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+            <span class="ow">and</span> <span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;article&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">is_not_special</span><span class="p">:</span>  <span class="c1"># 确保不是特殊类型的结果</span>
+            <span class="c1"># 获取可见的域名</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">domain</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-row&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-span-last&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;se_st_footer&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-showurl&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">text</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">domain</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-row&quot;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-span-last&quot;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;op-bk-polysemy-move&quot;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-showurl&quot;</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">text</span>
+                    <span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">domain</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;se_st_footer&quot;</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;c-showurl&quot;</span><span class="p">)</span>
+                            <span class="o">.</span><span class="n">text</span>
+                        <span class="p">)</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="n">domain</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
+                <span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="c1"># 加入结果</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">href</span> <span class="ow">and</span> <span class="n">is_not_special</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                    <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span>
+                    <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="n">domain</span><span class="p">,</span>
+                    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">href</span><span class="p">,</span>
+                    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;page&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1"># 分页</span>
+    <span class="c1"># pages_ = soup.findAll(&quot;span&quot;, class_=&quot;pc&quot;)</span>
+    <span class="c1"># pages = []</span>
+    <span class="c1"># for _ in pages_:</span>
+    <span class="c1">#     pages.append(int(_.text))</span>
+    <span class="c1"># # 如果搜索结果仅有一页时，百度不会显示底部导航栏</span>
+    <span class="c1"># # 所以这里直接设置成1，如果不设会报错`TypeError`</span>
+    <span class="c1"># if not pages:</span>
+    <span class="c1">#     pages = [1]</span>
+    <span class="c1"># 设置最终结果</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pre_results</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span>
+        <span class="c1"># 最大页数</span>
+        <span class="c1"># &quot;pages&quot;: max(pages),</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">num</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_wenku" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_wenku</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_wenku" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度文库搜索的页面源代码。</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度文库搜索API接口JSON数据</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_wenku</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度文库搜索的页面源代码。</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度文库搜索API接口JSON数据</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">_</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">][</span><span class="s2">&quot;msg&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;success&quot;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;normalResult&quot;</span><span class="p">]:</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;docInfo&quot;</span><span class="p">]</span>
+        <span class="n">author</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;authorInfo&quot;</span><span class="p">]</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">info</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;em&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/em&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; - 百度文库&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">des</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;em&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/em&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">pub_date</span> <span class="o">=</span> <span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">localtime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;createTime&quot;</span><span class="p">])))</span>
+        <span class="n">page_num</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;pageNum&quot;</span><span class="p">]</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;qualityScore&quot;</span><span class="p">]</span>
+        <span class="n">downloads</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;downloadCount&quot;</span><span class="p">]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">]</span>
+        <span class="n">is_vip</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;flag&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">28</span>
+        <span class="n">u_name</span> <span class="o">=</span> <span class="n">author</span><span class="p">[</span><span class="s2">&quot;uname&quot;</span><span class="p">]</span>
+        <span class="n">u_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://wenku.baidu.com/u/</span><span class="si">{</span><span class="n">u_name</span><span class="si">}</span><span class="s2">?uid=</span><span class="si">{</span><span class="n">author</span><span class="p">[</span><span class="s1">&#39;uid&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                <span class="s2">&quot;des&quot;</span><span class="p">:</span> <span class="n">des</span><span class="p">,</span>
+                <span class="s2">&quot;pub_date&quot;</span><span class="p">:</span> <span class="n">pub_date</span><span class="p">,</span>
+                <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="n">page_num</span><span class="p">,</span>
+                <span class="s2">&quot;quality&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">,</span>
+                <span class="s2">&quot;downloads&quot;</span><span class="p">:</span> <span class="n">downloads</span><span class="p">,</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+                <span class="s2">&quot;is_vip&quot;</span><span class="p">:</span> <span class="n">is_vip</span><span class="p">,</span>
+                <span class="s2">&quot;uploader&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">u_name</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">u_url</span><span class="p">},</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">_</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;total&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">_</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;normalResult&quot;</span><span class="p">]))</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span> <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="n">pages</span><span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="baiduspider.parser.__init__.Parser.parse_zhidao" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_zhidao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></code>
+
+
+<a href="#baiduspider.parser.__init__.Parser.parse_zhidao" class="headerlink" title="Permanent link">⚓︎</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>解析百度知道搜索的页面源代码.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>content</code></td>
+        <td><code>str</code></td>
+        <td><p>已经转换为UTF-8编码的百度知道搜索HTML源码</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>dict: 解析后的结果</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>baiduspider\parser\__init__.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_zhidao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;解析百度知道搜索的页面源代码.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        content (str): 已经转换为UTF-8编码的百度知道搜索HTML源码</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: 解析后的结果</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bs</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_minify</span><span class="p">(</span><span class="n">content</span><span class="p">),</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+    <span class="c1"># 搜索结果总数</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;wgt-picker&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;f-lighter&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;共&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;条结果&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># 所有搜索结果</span>
+    <span class="n">list_</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;dl&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_</span><span class="p">:</span>
+        <span class="c1"># 屏蔽企业回答</span>
+        <span class="k">if</span> <span class="s2">&quot;ec-oad&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]:</span>
+            <span class="k">continue</span>
+        <span class="c1"># print(item.prettify() + &#39;\n\n\n\n\n\n\n&#39;)</span>
+        <span class="c1"># 标题</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># 链接</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)[</span><span class="s2">&quot;data-href&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;video-content&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># 问题</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;问：&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;video-text&quot;</span><span class="p">)</span>
+            <span class="c1"># # 简介</span>
+            <span class="c1"># des = self._format(tmp[2].text)</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># 回答者</span>
+            <span class="n">answerer</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;回答:</span><span class="se">\u2002</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># 发布日期</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;时间:&quot;</span><span class="p">))</span>
+            <span class="c1"># 回答总数</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># 赞同数</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">agree</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;获赞:</span><span class="se">\u2002</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;次&quot;</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="n">agree</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">answer</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">type_</span> <span class="o">=</span> <span class="s2">&quot;video&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 回答</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;answer&quot;</span><span class="p">)</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;答：&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="c1"># 问题</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;summary&quot;</span><span class="p">)</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="n">__</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;问：&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;mr-8&quot;</span><span class="p">)</span>
+            <span class="c1"># 发布日期</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;mr-7&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="p">)</span>
+            <span class="c1"># 回答总数</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;个回答&quot;</span><span class="p">))</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># 回答者</span>
+            <span class="n">answerer</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;回答者:</span><span class="se">\xa0</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># 赞同数</span>
+            <span class="n">__</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;dd&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;explain&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;ml-10&quot;</span><span class="p">)</span>
+            <span class="n">agree</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">__</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="k">if</span> <span class="n">__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="n">type_</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span>
+        <span class="c1"># 生成结果</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+            <span class="s2">&quot;question&quot;</span><span class="p">:</span> <span class="n">question</span><span class="p">,</span>
+            <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="n">answer</span><span class="p">,</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+            <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span>
+            <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+            <span class="s2">&quot;agree&quot;</span><span class="p">:</span> <span class="n">agree</span><span class="p">,</span>
+            <span class="s2">&quot;answerer&quot;</span><span class="p">:</span> <span class="n">answerer</span><span class="p">,</span>
+            <span class="c1"># &quot;type&quot;: type_</span>
+        <span class="p">}</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 加入结果</span>
+    <span class="c1"># 获取分页</span>
+    <span class="c1"># wrap = bs.find(&quot;div&quot;, class_=&quot;pager&quot;)</span>
+    <span class="c1"># pages_ = wrap.findAll(&quot;a&quot;)[:-2]</span>
+    <span class="c1"># if &quot;下一页&quot; in pages_[-1].text:</span>
+    <span class="c1">#     pages = pages_[-2].text</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     pages = pages_[-1].text</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="n">results</span><span class="p">,</span>
+        <span class="c1"># 取最大页码</span>
+        <span class="c1"># &quot;pages&quot;: int(pages),</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+  <h2 id="__comments">评论</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="None",this.page.identifier="None"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//BaiduSpider.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../errors/__init__.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: __init__.py" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              __init__.py
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="subparser.html" class="md-footer__link md-footer__link--next" aria-label="下一页: subparser.py" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              subparser.py
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2021 BaiduSpider
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/BaiduSpider/BaiduSpider" target="_blank" rel="noopener" title="GitHub Repo" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://pypi.org/project/BaiduSpider/" target="_blank" rel="noopener" title="PyPI" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5h1.18m-4.28 11.79c-.4 0-.72.3-.72.89 0 .59.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68H4.86M9.14 5.71c.4 0 .72-.3.72-.89 0-.59-.32-.71-.72-.71-.39 0-.71.12-.71.71s.32.89.71.89z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://baidus.vercel.app" target="_blank" rel="noopener" title="BaiduSpider Web" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+      </a>
+    
+      
+      
+      <a href="https://baiduspider.github.io" target="_blank" rel="noopener" title="BaiduSpider Docs" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17V5H3v12h18m0-14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5v2H8v-2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h18M5 7h6v4H5V7m0 6h6v2H5v-2m8-6h6v2h-6V7m0 4h6v4h-6v-4z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "navigation.instant", "navigation.sections"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  <script src="../../../overrides/javascripts/main.js"></script>
+
+  </body>
+</html>
