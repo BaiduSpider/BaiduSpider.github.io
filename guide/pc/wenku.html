@@ -1610,13 +1610,13 @@
 
 <span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="指定页码">指定页码<a class="headerlink" href="#指定页码" title="Permanent link">⚓︎</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="筛选文档来源">筛选文档来源<a class="headerlink" href="#筛选文档来源" title="Permanent link">⚓︎</a></h3>
 <p>这四个参数可以让你搜到所需要的来源。下面我们来一一介绍它们的用法与含义。</p>
@@ -1627,7 +1627,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;vip-only&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示VIP专享的文档</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;vip-only&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示VIP专享的文档</span>
 </span></code></pre></div>
 <h4 id="按格式筛选">按格式筛选<a class="headerlink" href="#按格式筛选" title="Permanent link">⚓︎</a></h4>
 <p>目前 BaiduSpider 支持六种格式可供筛选，分别为<code class="highlight"><span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;doc&quot;</span><span class="p">,</span> <span class="s2">&quot;ppt&quot;</span><span class="p">,</span> <span class="s2">&quot;txt&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;xls&quot;</span><span class="p">]</span></code>。其中，<code class="highlight"><span class="s2">&quot;all&quot;</span></code>的含义为不筛选格式（默认），其余含义如字面。</p>
@@ -1635,14 +1635,14 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ppt&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示PPT格式的文档</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ppt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示PPT格式的文档</span>
 </span></code></pre></div>
 <h4 id="按时间筛选">按时间筛选<a class="headerlink" href="#按时间筛选" title="Permanent link">⚓︎</a></h4>
 <p>使用<code>time</code>筛选参数，你可以进行以年为单位的时间筛选。选项分别为<code class="highlight"><span class="s2">&quot;all&quot;</span></code>（不筛选，默认）、<code class="highlight"><span class="s2">&quot;this-year&quot;</span></code>（今年）、<code class="highlight"><span class="s2">&quot;last-year&quot;</span></code>（去年）和<code class="highlight"><span class="s2">&quot;previous-years&quot;</span></code>（前年及以前）。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;last-year&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示去年发布的文档</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;last-year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示去年发布的文档</span>
 </span></code></pre></div>
 <h4 id="按页数筛选">按页数筛选<a class="headerlink" href="#按页数筛选" title="Permanent link">⚓︎</a></h4>
 <p>你可以使用<code>page_range</code>参数来通过页数筛选文档。<code>page_range</code>的可选值为<code class="highlight"><span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="nb">int</span><span class="p">]]</span></code>。其中，<code class="highlight"><span class="s2">&quot;all&quot;</span></code>的含义为不通过页数进行筛选（默认）。另一个元组选项则是筛选区间。</p>
@@ -1650,7 +1650,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">page_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">)))</span>  <span class="c1"># 仅显示页数为5页到19页的文档</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">page_range</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">19</span><span class="p">))</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示页数为5页到19页的文档</span>
 </span></code></pre></div>
 <h3 id="搜索结果排序方式">搜索结果排序方式<a class="headerlink" href="#搜索结果排序方式" title="Permanent link">⚓︎</a></h3>
 <p>对于文库搜索，BaiduSpider 提供四种不同的排序方式，分别为：按相关性、按时间、按下载量和按评分。你可以通过更改<code>sort_by</code>参数的值来修改排序方式。</p>
@@ -1658,7 +1658,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">sort_by</span><span class="o">=</span><span class="s2">&quot;downloads&quot;</span><span class="p">))</span>  <span class="c1"># 按下载量排序</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_wenku</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">sort_by</span><span class="o">=</span><span class="s2">&quot;downloads&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 按下载量排序</span>
 </span></code></pre></div>
 <h2 id="返回值">返回值<a class="headerlink" href="#返回值" title="Permanent link">⚓︎</a></h2>
 <h3 id="字典返回值">字典返回值<a class="headerlink" href="#字典返回值" title="Permanent link">⚓︎</a></h3>

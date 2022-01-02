@@ -1520,20 +1520,20 @@
 
 <span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">))</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="指定页码">指定页码<a class="headerlink" href="#指定页码" title="Permanent link">⚓︎</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="筛选范围">筛选范围<a class="headerlink" href="#筛选范围" title="Permanent link">⚓︎</a></h3>
 <p>经验搜索提供筛选范围参数：<code>scope</code>参数。你可以筛选全部经验（<code class="highlight"><span class="s2">&quot;all&quot;</span></code>，默认）、优秀经验（<code class="highlight"><span class="s2">&quot;outstanding&quot;</span></code>）、好评经验（<code class="highlight"><span class="s2">&quot;praise&quot;</span></code>）和原创经验（<code class="highlight"><span class="s2">&quot;original&quot;</span></code>）。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示原创经验</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_jingyan</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;original&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示原创经验</span>
 </span></code></pre></div>
 <h2 id="返回值">返回值<a class="headerlink" href="#返回值" title="Permanent link">⚓︎</a></h2>
 <h3 id="字典返回值">字典返回值<a class="headerlink" href="#字典返回值" title="Permanent link">⚓︎</a></h3>

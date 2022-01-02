@@ -2298,7 +2298,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;content_left&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;pages&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
     <span class="c1"># 获取搜索结果总数</span>
     <span class="n">tmp1</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-molecule&quot;</span><span class="p">)</span>
     <span class="n">idx_</span> <span class="o">=</span> <span class="mi">0</span>
@@ -2333,11 +2333,7 @@
     <span class="c1"># 预处理相关搜索</span>
     <span class="k">if</span> <span class="s2">&quot;related&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">_related</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;result-molecule&quot;</span><span class="p">)</span>
-                <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;table&quot;</span><span class="p">)</span>
-                <span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="n">_related</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;table&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="n">_related</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">related</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2524,6 +2520,10 @@
                         <span class="n">domain</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
                 <span class="n">domain</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="c1"># 百度快照</span>
+        <span class="n">snapshot</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;kuaizhao&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">snapshot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">snapshot</span> <span class="o">=</span> <span class="n">snapshot</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
         <span class="c1"># 加入结果</span>
         <span class="k">if</span> <span class="n">title</span> <span class="ow">and</span> <span class="n">href</span> <span class="ow">and</span> <span class="n">is_not_special</span><span class="p">:</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -2533,6 +2533,7 @@
                     <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="n">domain</span><span class="p">,</span>
                     <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">href</span><span class="p">,</span>
                     <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span>
+                    <span class="s2">&quot;snapshot&quot;</span><span class="p">:</span> <span class="n">snapshot</span><span class="p">,</span>
                     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;result&quot;</span><span class="p">,</span>
                 <span class="p">}</span>
             <span class="p">)</span>

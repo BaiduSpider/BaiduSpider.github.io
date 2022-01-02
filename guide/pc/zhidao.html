@@ -1520,20 +1520,20 @@
 
 <span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="指定页码">指定页码<a class="headerlink" href="#指定页码" title="Permanent link">⚓︎</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="按时间筛选">按时间筛选<a class="headerlink" href="#按时间筛选" title="Permanent link">⚓︎</a></h3>
 <p>通过更改<code>time</code>参数的值，你可以按时间筛选搜索结果。<code>time</code>默认为<code>None</code>，即不筛选，你也可以把它更改为下列任一一种：<code class="highlight"><span class="p">[</span><span class="s2">&quot;week&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">]</span></code>。它们分别表示：一周内、一月内和一年内。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示发布时间在一个月内的问答</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_zhidao</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示发布时间在一个月内的问答</span>
 </code></pre></div>
 <h2 id="返回值">返回值<a class="headerlink" href="#返回值" title="Permanent link">⚓︎</a></h2>
 <h3 id="字典返回值">字典返回值<a class="headerlink" href="#字典返回值" title="Permanent link">⚓︎</a></h3>

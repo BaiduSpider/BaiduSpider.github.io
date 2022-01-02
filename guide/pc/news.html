@@ -1536,13 +1536,13 @@
 
 <span class="n">spider</span> <span class="o">=</span> <span class="n">BaiduSpider</span><span class="p">()</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">))</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">spider</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="指定页码">指定页码<a class="headerlink" href="#指定页码" title="Permanent link">⚓︎</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">pn</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="搜索结果排序方式">搜索结果排序方式<a class="headerlink" href="#搜索结果排序方式" title="Permanent link">⚓︎</a></h3>
 <p>BaiduSpider 提供两种不同的资讯搜索搜索结果排序方式：焦点与时间。默认情况下，BaiduSpider 会按照焦点进行排序，当然你也可以指定使用时间进行排序：通过更改<code>sort_by</code>参数的值。</p>
@@ -1550,7 +1550,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">sort_by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">))</span>  <span class="c1"># 按时间排序</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">sort_by</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 按时间排序</span>
 </span></code></pre></div>
 <h3 id="筛选资讯来源">筛选资讯来源<a class="headerlink" href="#筛选资讯来源" title="Permanent link">⚓︎</a></h3>
 <p>这个参数可以让你搜到所需要的来源。你可以通过更改<code>show</code>参数的值来达到这一目的。默认无筛选。</p>
@@ -1558,7 +1558,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">baiduspider</span> <span class="kn">import</span> <span class="n">BaiduSpider</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s2">&quot;media&quot;</span><span class="p">))</span>  <span class="c1"># 仅显示来自媒体的资讯</span>
+<span class="hll"><span class="n">pprint</span><span class="p">(</span><span class="n">BaiduSpider</span><span class="p">()</span><span class="o">.</span><span class="n">search_news</span><span class="p">(</span><span class="s2">&quot;要搜索的关键词&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s2">&quot;media&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plain</span><span class="p">)</span>  <span class="c1"># 仅显示来自媒体的资讯</span>
 </span></code></pre></div>
 <h2 id="返回值">返回值<a class="headerlink" href="#返回值" title="Permanent link">⚓︎</a></h2>
 <h3 id="字典返回值">字典返回值<a class="headerlink" href="#字典返回值" title="Permanent link">⚓︎</a></h3>
